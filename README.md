@@ -41,3 +41,48 @@
 
 ## Шаг 3: Выборка и фильтрация данных
 
+1. Выбрал только столбцы ```Booking ID```, ```booking_datetime```, ```Booking Status```, ```Vehicle Type```, ```Payment Method``` и вывел первые 5 строк
+
+```df['booking_datetime'] = pd.to_datetime(df['Date'] + ' ' + df['Time'])```
+
+```selected_columns = df[['Booking ID', 'booking_datetime', 'Booking Status', 'Vehicle Type', 'Payment Method']]```
+
+```print(selected_columns.head())```
+
+#### Вывод:
+
+<img width="763" height="223" alt="image" src="https://github.com/user-attachments/assets/e54501ef-1271-4b18-9969-fb365575fcc0" />
+
+2. Отфильтровать и вывести все бронирования, которые имеют статус "Cancelled by Driver"
+
+```cancelled_by_driver = df[df['Booking Status'] == 'Cancelled by Driver']```
+
+```print(cancelled_by_driver)```
+
+#### Вывод: 
+
+<img width="696" height="391" alt="image" src="https://github.com/user-attachments/assets/9e37055c-2556-4998-8150-bc6eb58ad9b8" />
+
+3. Отфильтровать и вывести все бронирования, выполненные с использованием ```Vehicle Type``` "Auto", иимеющие ```Booking Value``` более 500
+
+```auto_high_value = df[(df['Vehicle Type'] == 'Auto') & (df['Booking Value'] > 500)]```
+
+```print(auto_high_value)```
+
+#### Вывод: 
+
+<img width="714" height="406" alt="image" src="https://github.com/user-attachments/assets/c2c27b8d-a8a0-4de2-817e-b12c50760b5a" />
+
+4. Отфильтровать и вывести все бронирования, которые были сделаны с ```2024-03-01``` по ```2024-03-31``` включительно
+
+```start_date = '2024-03-01'```
+
+```end_date = '2024-03-31'```
+
+```march_2024_bookings = df[(df['booking_datetime'] >= start_date) & (df['booking_datetime'] <= end_date)]```
+
+```print(march_2024_bookings)```
+
+#### Вывод: 
+
+<img width="728" height="399" alt="image" src="https://github.com/user-attachments/assets/c598bd45-c436-4f42-a475-a8462e084f20" />
