@@ -21,10 +21,9 @@ print(cancelled_by_driver)
 auto_high_value = df[(df['Vehicle Type'] == 'Auto') & (df['Booking Value'] > 500)]
 print(auto_high_value)
 
-#Задаем даты начала и конца периода
 start_date = '2024-03-01'
 end_date = '2024-03-31'
-# Фильтруем
 march_2024_bookings = df[(df['booking_datetime'] >= start_date) & (df['booking_datetime'] <= end_date)]
 print(march_2024_bookings)
+
 
