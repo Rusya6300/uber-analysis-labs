@@ -43,11 +43,11 @@
 
 1. Выбрал только столбцы ```Booking ID```, ```booking_datetime```, ```Booking Status```, ```Vehicle Type```, ```Payment Method``` и вывел первые 5 строк
 
-```df['booking_datetime'] = pd.to_datetime(df['Date'] + ' ' + df['Time'])```
-
-```selected_columns = df[['Booking ID', 'booking_datetime', 'Booking Status', 'Vehicle Type', 'Payment Method']]```
-
-```print(selected_columns.head())```
+```
+df['booking_datetime'] = pd.to_datetime(df['Date'] + ' ' + df['Time'])
+selected_columns = df[['Booking ID', 'booking_datetime', 'Booking Status', 'Vehicle Type', 'Payment Method']]
+print(selected_columns.head())
+```
 
 #### Вывод:
 
@@ -55,9 +55,10 @@
 
 2. Отфильтровать и вывести все бронирования, которые имеют статус "Cancelled by Driver"
 
-```cancelled_by_driver = df[df['Booking Status'] == 'Cancelled by Driver']```
-
-```print(cancelled_by_driver)```
+```
+cancelled_by_driver = df[df['Booking Status'] == 'Cancelled by Driver']
+print(cancelled_by_driver)
+```
 
 #### Вывод: 
 
@@ -65,9 +66,10 @@
 
 3. Отфильтровать и вывести все бронирования, выполненные с использованием ```Vehicle Type``` "Auto", иимеющие ```Booking Value``` более 500
 
-```auto_high_value = df[(df['Vehicle Type'] == 'Auto') & (df['Booking Value'] > 500)]```
-
-```print(auto_high_value)```
+```
+auto_high_value = df[(df['Vehicle Type'] == 'Auto') & (df['Booking Value'] > 500)]
+print(auto_high_value)
+```
 
 #### Вывод: 
 
@@ -75,13 +77,12 @@
 
 4. Отфильтровать и вывести все бронирования, которые были сделаны с ```2024-03-01``` по ```2024-03-31``` включительно
 
-```start_date = '2024-03-01'```
-
-```end_date = '2024-03-31'```
-
-```march_2024_bookings = df[(df['booking_datetime'] >= start_date) & (df['booking_datetime'] <= end_date)]```
-
-```print(march_2024_bookings)```
+```
+start_date = '2024-03-01'
+end_date = '2024-03-31'
+march_2024_bookings = df[(df['booking_datetime'] >= start_date) & (df['booking_datetime'] <= end_date)]
+print(march_2024_bookings)
+```
 
 #### Вывод: 
 
